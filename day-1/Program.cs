@@ -9,10 +9,30 @@ class Program
         // Specify the path to your input file
         string filePath = "inputData.txt";
 
+
+        // Part 1
         // Regular expression pattern to match the first and last digit on a line
-        string pattern = @"(?:\d|one|two|three|four|five|six|seven|eight|nine|zero+)";
+        string patternPart1 = @"\d";
 
         // Variable to store the total sum
+        int totalSum = GetSum(filePath, patternPart1);
+
+        // Display the total sum
+        Console.WriteLine($"Total Sum: {totalSum}");
+
+        // Part 2
+        // Regular expression pattern to match the first and last digit on a line
+        string patternPart2 = @"(?:\d|one|two|three|four|five|six|seven|eight|nine|zero+)";
+
+        // Variable to store the total sum
+        totalSum = GetSum(filePath, patternPart2);
+
+        // Display the total sum
+        Console.WriteLine($"Total Sum: {totalSum}");
+    }
+
+
+    static int GetSum(string filePath, string pattern) {
         int totalSum = 0;
 
         // Open a stream reader for the file
@@ -58,12 +78,11 @@ class Program
             }
         }
 
-        // Display the total sum
-        Console.WriteLine($"Total Sum: {totalSum}");
+        return totalSum;
     }
 
-    // Helper method to convert word representation of a digit to numeric value
-    static int GetNumericValue(string wordRepresentation)
+// Helper method to convert word representation of a digit to numeric value
+static int GetNumericValue(string wordRepresentation)
     {
         if (int.TryParse(wordRepresentation, out int numericValue))
         {
@@ -82,7 +101,7 @@ class Program
             case "eight": return 8;
             case "nine": return 9;
             case "zero": return 0;
-            default: throw new ArgumentException($"Invalid word representation: {wordRepresentation}");
+            default: return -1;
         }
     }
 }
