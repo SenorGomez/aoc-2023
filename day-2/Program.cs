@@ -1,34 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Microsoft.Extensions.Configuration;
 
 class Program
 {
     static void Main()
     {
-        // Build configuration
         IConfiguration configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .Build();
 
-        // Deserialize the configuration
-        CubeConfiguration cubeConfiguration = new CubeConfiguration();
-        configuration.GetSection("CubeConfiguration").Bind(cubeConfiguration);
+        CubeConfiguration cubeConfiguration = configuration.GetSection("CubeConfiguration").Get<CubeConfiguration>();
 
-        // Specify the path to your input file
         string filePath = "inputData.txt";
 
-        // Find possible games
         List<int> possibleGameIds = PossibleGames(filePath, cubeConfiguration.CubeCounts);
 
-        // Calculate the sum of IDs
         int sumOfIds = possibleGameIds.Sum();
 
-        Console.WriteLine("Possible games: " + string.Join(", ", possibleGameIds));
-        Console.WriteLine("Sum of IDs: " + sumOfIds);
+        Console.WriteLine($"Possible games: {string.Join(", ", possibleGameIds)}");
+        Console.WriteLine($"Sum of IDs: {sumOfIds}");
     }
 
     static bool IsPossible(List<List<string>> game, Dictionary<string, int> cubeCounts)
@@ -41,23 +34,21 @@ class Program
             {
                 List<string> parts = item.Split().ToList();
                 string color = parts[1];
-                int count = int.Parse(parts[0]);
+                int count;
 
-                if (subsetCounts.ContainsKey(color))
+                if (int.TryParse(parts[0], out count))
                 {
-                    subsetCounts[color] += count;
+                    subsetCounts.TryGetValue(color, out int currentCount);
+                    subsetCounts[color] = currentCount + count;
                 }
                 else
                 {
-                    subsetCounts[color] = count;
+                    Console.WriteLine($"Error parsing count for subset: {item}");
                 }
             }
 
-            foreach (var entry in subsetCounts)
+            foreach (var (color, count) in subsetCounts)
             {
-                string color = entry.Key;
-                int count = entry.Value;
-
                 if (count > cubeCounts[color])
                 {
                     return false;
@@ -72,20 +63,35 @@ class Program
     {
         List<int> possibleGameIds = new List<int>();
 
-        using (StreamReader reader = new StreamReader(filePath))
+        try
         {
-            string line;
-            while ((line = reader.ReadLine()) != null)
+            using (StreamReader reader = new StreamReader(filePath))
             {
-                List<string> parts = line.Split(":").ToList();
-                int gameId = int.Parse(parts[0].Split(' ')[1].Trim());
-                List<List<string>> subsets = parts[1].Split(';').Select(subset => subset.Trim().Split(", ").ToList()).ToList();
-
-                if (IsPossible(subsets, cubeCounts))
+                string line;
+                while ((line = reader.ReadLine()) != null)
                 {
-                    possibleGameIds.Add(gameId);
+                    List<string> parts = line.Split(':').ToList();
+                    int gameId;
+
+                    if (int.TryParse(parts[0].Split(' ')[1].Trim(), out gameId))
+                    {
+                        List<List<string>> subsets = parts[1].Split(';').Select(subset => subset.Trim().Split(", ").ToList()).ToList();
+
+                        if (IsPossible(subsets, cubeCounts))
+                        {
+                            possibleGameIds.Add(gameId);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error parsing game ID for line: {line}");
+                    }
                 }
             }
+        }
+        catch (IOException ex)
+        {
+            Console.WriteLine($"Error reading file: {ex.Message}");
         }
 
         return possibleGameIds;
