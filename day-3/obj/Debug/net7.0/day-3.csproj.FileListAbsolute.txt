@@ -1,0 +1,16 @@
+/Users/jamesgomez/Projects/aoc-2023/day-3/bin/Debug/net7.0/day-3
+/Users/jamesgomez/Projects/aoc-2023/day-3/bin/Debug/net7.0/engineSchematic.txt
+/Users/jamesgomez/Projects/aoc-2023/day-3/bin/Debug/net7.0/day-3.deps.json
+/Users/jamesgomez/Projects/aoc-2023/day-3/bin/Debug/net7.0/day-3.runtimeconfig.json
+/Users/jamesgomez/Projects/aoc-2023/day-3/bin/Debug/net7.0/day-3.dll
+/Users/jamesgomez/Projects/aoc-2023/day-3/bin/Debug/net7.0/day-3.pdb
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/day-3.csproj.AssemblyReference.cache
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/day-3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/day-3.AssemblyInfoInputs.cache
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/day-3.AssemblyInfo.cs
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/day-3.csproj.CoreCompileInputs.cache
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/day-3.dll
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/refint/day-3.dll
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/day-3.pdb
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/day-3.genruntimeconfig.cache
+/Users/jamesgomez/Projects/aoc-2023/day-3/obj/Debug/net7.0/ref/day-3.dll
