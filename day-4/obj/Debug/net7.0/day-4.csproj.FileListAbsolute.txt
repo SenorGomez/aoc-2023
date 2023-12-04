@@ -1,0 +1,16 @@
+/Users/jamesgomez/Projects/aoc-2023/day-4/bin/Debug/net7.0/day-4
+/Users/jamesgomez/Projects/aoc-2023/day-4/bin/Debug/net7.0/scratchCards.txt
+/Users/jamesgomez/Projects/aoc-2023/day-4/bin/Debug/net7.0/day-4.deps.json
+/Users/jamesgomez/Projects/aoc-2023/day-4/bin/Debug/net7.0/day-4.runtimeconfig.json
+/Users/jamesgomez/Projects/aoc-2023/day-4/bin/Debug/net7.0/day-4.dll
+/Users/jamesgomez/Projects/aoc-2023/day-4/bin/Debug/net7.0/day-4.pdb
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/day-4.csproj.AssemblyReference.cache
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/day-4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/day-4.AssemblyInfoInputs.cache
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/day-4.AssemblyInfo.cs
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/day-4.csproj.CoreCompileInputs.cache
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/day-4.dll
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/refint/day-4.dll
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/day-4.pdb
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/day-4.genruntimeconfig.cache
+/Users/jamesgomez/Projects/aoc-2023/day-4/obj/Debug/net7.0/ref/day-4.dll
